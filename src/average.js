@@ -12,8 +12,21 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {
-  // add pull request
+const average = (myMedia) => {
+  let soma = 0;
+  // usando length para verificar se array esta vazio
+  if (myMedia.length === 0) {
+    return undefined;
+  }
+    for (let index = 0; index < myMedia.length; index += 1) {
+     if (typeof myMedia[index] !== 'number') {
+      return undefined;
+    }
+      soma += myMedia[index];
+    // console.log(soma);
+  }
+  return Math.round(soma / myMedia.length);
 };
+console.log(average([]));
 
 module.exports = average;
