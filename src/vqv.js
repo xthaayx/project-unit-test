@@ -16,6 +16,12 @@
       #VQV!'
 */
 
-const vqv = () => {};
+const vqv = (nome, idade) => (
+// usei a negativa dos valores
+  !(nome) || !(idade) ? undefined : `Oi, meu nome é ${nome}!
+Tenho ${idade} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`
+);
 
 module.exports = vqv;
