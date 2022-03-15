@@ -39,9 +39,13 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     // Teste se os dois itens dentro do array retornado pela função são objetos.
     expect(typeof productDetails()).toBe('object');
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-
+    let param1 ;
+    let param2 ;
+    if (param1 !== param2) {
+    expect(productDetails(param1)!== productDetails(param2)).toBe('true');
+    }     
     // Teste se os dois productIds terminam com 123.
-    expect(Object.values(productDetails['Alcool gel'].details.productId)).toBe('Alcool gel123');
-    expect(Object.values(productDetails['Máscara'].details.productId)).toBe('Máscara123');
+    expect(productDetails('Alcool gel', 'Máscara')[0].details.productId).toBe('Alcool gel123');
+    expect(productDetails('Alcool gel', 'Máscara')[1].details.productId).toBe('Máscara123');
   });
 });
